@@ -33,10 +33,12 @@ function digits_never_decrease (password) {
 
 function the_two_adjacent_matching_digits_are_not_part_of_a_larger_group_of_matching_digits (password) {
   for (var i = 0; i < password.length - 1; i++) {
-    if (password.charAt(i) == password.charAt(i + 1)) {
-      if (password.charAt(i) != password.charAt(i - 1) && password.charAt(i) != password.charAt(i + 2)) {
-        return true
-      }
+    if (
+      password.charAt(i) == password.charAt(i + 1) &&
+      password.charAt(i) != password.charAt(i - 1) &&
+      password.charAt(i) != password.charAt(i + 2)
+    ) {
+      return true
     }
   }
 
