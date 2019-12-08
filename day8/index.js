@@ -19,7 +19,7 @@ layers.forEach((layer, index) => {
   }
 })
 
-console.log(`The number is ${layers[minZerosIndex].match(/1/g).length * layers[minZerosIndex].match(/2/g).length}.`)
+console.log(`The number is ${layers[minZerosIndex].match(/1/g).length * layers[minZerosIndex].match(/2/g).length}.\n`)
 
 let image = ''
 
@@ -36,4 +36,4 @@ for (var i = 0; i < width * height; i++) {
   }
 }
 
-console.log(`The message is:${image}`)
+console.log(`The message is:\n${image}\n`)
