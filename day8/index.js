@@ -4,17 +4,17 @@ let input = fs.readFileSync(`${__dirname}/input.txt`).toString().trim()
 
 const width = 25
 const height = 6
+const pixels = width * height
 
-const layers = input.match(new RegExp(`.{1,${width * height}}`, 'g'))
+const layers = input.match(new RegExp(`.{1,${pixels}}`, 'g'))
 
-let layerZeros
-let minZeros = width * height
-let minZerosIndex
+let minZeros = pixels
+let minZerosIndex = 0
 
 layers.forEach((layer, index) => {
-  layerZeros = layer.match(/0/g).length
-  if (layerZeros < minZeros) {
-    minZeros = layerZeros
+  const zeros = layer.match(/0/g).length
+  if (zeros < minZeros) {
+    minZeros = zeros
     minZerosIndex = index
   }
 })
